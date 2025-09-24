@@ -1,0 +1,223 @@
+/* IT-CSS-300 Light Glass + Gold accents, Roboto Light */
+
+/* ===== Reset & mobile frame ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  height: 100%;
+  background: #fdfdfd;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  color: #111;
+}
+
+/* App container with subtle silver gradient + glass sheen */
+#app {
+  width: 100%;
+  max-width: 375px;
+  min-height: 667px;
+  margin: 0 auto;
+  display: flex; 
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 64px;
+
+  background: 
+    radial-gradient(120% 80% at 70% 10%, rgba(255,255,255,0.95), rgba(235,238,245,0.85)),
+    linear-gradient(180deg, #ffffff 0%, #f0f2f6 100%);
+  backdrop-filter: blur(6px) saturate(1.2);
+}
+
+
+/* ===== Screens ===== */
+.exercise {
+  min-height: calc(100vh - 64px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;  /* consistent equal spacing */
+}
+
+
+.hidden { display: none !important; }
+
+/* ===== Headings ===== */
+.exercise h1 {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  background: linear-gradient(180deg,#c59b2f,#f4e1a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 8px rgba(180,140,40,0.2);
+}
+
+/* ===== Glass panels (inputs/log) ===== */
+.glass, #logContent, #weightInput, #notesInput {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  backdrop-filter: blur(12px) saturate(1.3);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* ===== Master controls (timer + masterset buttons) ===== */
+#masterControls,
+#hex_masterControls,
+#btnp_masterControls,
+#pull_masterControls,
+#push_masterControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+
+
+/* ===== Buttons ===== */
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(230,233,240,0.85));
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Primary / key actions = Gold (NOT timer/view-log) */
+#prepFinish, #masterDone, #weightConfirm, #hex_masterDone, #hex_weightConfirm,
+#btnp_masterDone, #btnp_weightConfirm,
+#pull_masterDone, #pull_weightConfirm,
+#push_masterDone, #push_weightConfirm,
+#introStart, #introNext, #outroStart, #outroNext, #logBack {
+  background: linear-gradient(180deg, #f7dd86, #d2a84d);
+  color: #111;
+  border-color: rgba(200,160,40,0.5);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+
+
+/* ===== Inputs ===== */
+label {
+  font-size: 14px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+}
+input[type="number"], textarea {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #111;
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+textarea { min-height: 90px; resize: none; }
+
+/* ===== Timer display ===== */
+.timer {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #111;
+  padding: 20px 16px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.08),
+    0 4px 12px rgba(0,0,0,0.05);
+  backdrop-filter: blur(10px) saturate(1.2);
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ===== Log viewer ===== */
+#logContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+.log-item {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+}
+.log-item strong { color: #c79e3c; font-weight: 400; }
+
+/* ===== Bottom nav ===== */
+nav {
+  position: fixed;
+  left: 50%; transform: translateX(-50%);
+  bottom: 12px;
+  width: calc(100% - 24px);
+  max-width: 375px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: transparent;
+}
+
+/* ===== Error styles (debug) ===== */
+.error-banner {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: 10px 14px; text-align: center; z-index: 99;
+  background: #ffefef; color: #8a1f1f; border-bottom: 1px solid #d87b7b;
+  font-size: 13px;
+}
+
+#shuffleBox{ display:flex; align-items:center; gap:12px; max-width:320px; width:100%; }
+#shuffleBox input[type="checkbox"]{ width:22px; height:22px; accent-color:#d2a84d; }
+#shuffleBox label{ margin:0; font-weight:400; letter-spacing:.4px; }
+
+
+.timer:empty { display: none; }
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IRON TEMPLE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <!-- Roboto Light -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- INTRO: CHOOSE ORDER -->
+    <section id="intro" class="exercise">
+      <h1>RESTING SQUAT</h1>
+
+      <div class="glass" id="shuffleBox">
+        <label for="shuffleToggle">SHUFFLE MAIN EXERCISES</label>
+        <input type="checkbox" id="shuffleToggle" />
+      </div>
+
+      <button id="introStart" class="btn">START</button>
+      <div id="introTimer" class="timer"></div>
+      <button id="introNext" class="btn hidden">NEXT</button>
+    </section>
+
+    <!-- EXERCISE 1: CALFPRESS -->
+    <section id="calfpress" class="exercise hidden">
+      <h1>CALFPRESS</h1>
+
+      <div id="calf_weight" class="glass">
+        <label>WEIGHT (KG):</label>
+        <input type="number" id="calf_weightField" />
+      </div>
+
+      <div id="calf_timerBox">
+        <div id="calf_timer" class="timer"></div>
+        <button id="calf_start" class="btn">START INTERVAL</button>
+      </div>
+
+      <button id="calf_next" class="btn">NEXT</button>
+
+      <div id="calf_finishBox" class="glass hidden">
+        <button id="calf_finish" class="btn">FINISHED MASTERSET</button>
+        <label>REPS (MASTERSET):</label>
+        <input type="number" id="calf_repsField" />
+        <label>NOTES:</label>
+        <textarea id="calf_notesField"></textarea>
+      </div>
+    </section>
+
+    <!-- EXERCISE 2: HEX DEADLIFT -->
+    <section id="hex" class="exercise hidden">
+      <h1>HEX DEADLIFT</h1>
+
+      <div id="hex_weight" class="glass">
+        <label>WEIGHT (KG):</label>
+        <input type="number" id="hex_weightField" />
+      </div>
+
+      <div id="hex_timerBox">
+        <div id="hex_timer" class="timer"></div>
+        <button id="hex_start" class="btn">START INTERVAL</button>
+      </div>
+
+      <button id="hex_next" class="btn">NEXT</button>
+
+      <div id="hex_finishBox" class="glass hidden">
+        <button id="hex_finish" class="btn">FINISHED MASTERSET</button>
+        <label>REPS (MASTERSET):</label>
+        <input type="number" id="hex_repsField" />
+        <label>NOTES:</label>
+        <textarea id="hex_notesField"></textarea>
+      </div>
+    </section>
+
+    <!-- EXERCISE 3: PULLUPS -->
+    <section id="pullups" class="exercise hidden">
+      <h1>PULLUPS</h1>
+
+      <div id="pull_weight" class="glass">
+        <label>WEIGHT (KG):</label>
+        <input type="number" id="pull_weightField" />
+      </div>
+
+      <div id="pull_timerBox">
+        <div id="pull_timer" class="timer"></div>
+        <button id="pull_start" class="btn">START INTERVAL</button>
+      </div>
+
+      <button id="pull_next" class="btn">NEXT</button>
+
+      <div id="pull_finishBox" class="glass hidden">
+        <button id="pull_finish" class="btn">FINISHED MASTERSET</button>
+        <label>REPS (MASTERSET):</label>
+        <input type="number" id="pull_repsField" />
+        <label>NOTES:</label>
+        <textarea id="pull_notesField"></textarea>
+      </div>
+    </section>
+
+    <!-- EXERCISE 4: BTNP -->
+    <section id="btnp" class="exercise hidden">
+      <h1>BTNP</h1>
+
+      <div id="btnp_weight" class="glass">
+        <label>WEIGHT (KG):</label>
+        <input type="number" id="btnp_weightField" />
+      </div>
+
+      <div id="btnp_timerBox">
+        <div id="btnp_timer" class="timer"></div>
+        <button id="btnp_start" class="btn">START INTERVAL</button>
+      </div>
+
+      <button id="btnp_next" class="btn">NEXT</button>
+
+      <div id="btnp_finishBox" class="glass hidden">
+        <button id="btnp_finish" class="btn">FINISHED MASTERSET</button>
+        <label>REPS (MASTERSET):</label>
+        <input type="number" id="btnp_repsField" />
+        <label>NOTES:</label>
+        <textarea id="btnp_notesField"></textarea>
+      </div>
+    </section>
+
+    <!-- EXERCISE 5: PUSHUPS -->
+    <section id="pushups" class="exercise hidden">
+      <h1>PUSHUPS</h1>
+
+      <div id="push_weight" class="glass">
+        <label>WEIGHT (KG):</label>
+        <input type="number" id="push_weightField" />
+      </div>
+
+      <div id="push_timerBox">
+        <div id="push_timer" class="timer"></div>
+        <button id="push_start" class="btn">START INTERVAL</button>
+      </div>
+
+      <button id="push_next" class="btn">NEXT</button>
+
+      <div id="push_finishBox" class="glass hidden">
+        <button id="push_finish" class="btn">FINISHED MASTERSET</button>
+        <label>REPS (MASTERSET):</label>
+        <input type="number" id="push_repsField" />
+        <label>NOTES:</label>
+        <textarea id="push_notesField"></textarea>
+      </div>
+    </section>
+
+    <!-- OUTRO -->
+    <section id="outro" class="exercise hidden">
+      <h1>DEADHANG</h1>
+      <button id="outroStart" class="btn">START</button>
+      <div id="outroTimer" class="timer"></div>
+      <button id="outroNext" class="btn hidden">NEXT</button>
+    </section>
+
+    <!-- LOG VIEWER (LAST SESSION SNAPSHOT) -->
+    <section id="log" class="exercise hidden">
+      <h1>LAST SESSION</h1>
+      <div id="logContent"></div>
+      <button id="logBack" class="btn">BACK</button>
+    </section>
+
+    <!-- NAV -->
+    <nav>
+      <button id="showLog" class="btn small">VIEW LOG</button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
